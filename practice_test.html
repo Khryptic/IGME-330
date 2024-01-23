@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function greet(name) {
+        return "Hello " + name;
+    }
+
+    const greet2 = (name) => {
+        return `Hello ${name}`;
+    }
+
+    function doubleIt(num) {
+        return num * 2;
+    }
+
+    function something() {
+        document.querySelector(".not-important").innerHTML = "DELETED"
+        document.querySelector("#important").style.color = "red";
+    }
+
+    function init() {
+        let button = document.querySelector("#something");
+        button.onclick = something;
+    }
+
+    window.onload = init;
+</script>
+
+<body>
+    <p class="not-important">Not Important</p>
+    <p id="important">Maybe Important</p>
+    <button id="something">Do the thing</button>
+</body>
+
+</html>
