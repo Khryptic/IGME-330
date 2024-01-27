@@ -15,7 +15,7 @@ function getRandom(list) {
 }
 
 function generateBabble() {
-    output.innerHTML = (`${getRandom(words1)} ${getRandom(words2)} ${getRandom(words3)}`);
+    output.innerHTML = `${getRandom(words1)} ${getRandom(words2)} ${getRandom(words3)}`;
 }
 
 function init() {
