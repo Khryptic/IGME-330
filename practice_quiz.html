@@ -27,7 +27,10 @@
     function init() {
         let button = document.querySelector("#something");
         button.onclick = something;
+        console.log(double(5));
     }
+
+    const double = number => {return number * 2};
 
     window.onload = init;
 </script>
