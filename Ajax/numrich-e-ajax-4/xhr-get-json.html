@@ -29,19 +29,16 @@
         document.querySelector("#my-button").onclick = loadTextXHR;
 
         function loadTextXHR() {
-            const url = "data/pet-names.json";
+            const url = "data/simple-pet-names.json";
             const xhr = new XMLHttpRequest();
             xhr.onload = (e) => {
                 console.log(`In onload - HTTP Status Code = ${e.target.status}`);
-                const xml = e.target.responseXML;
-                if(!xml) {
-                    document.querySelector("#output").innerHTML = "XML is null!";
-                    return
-                }
-                
-                const dogNames = xml.querySelector("namelist[cid='dognames']").textContent.split(",");
-                const catNames = xml.querySelector("namelist[cid='catnames']").textContent.split(",");
-                const birdNames = xml.querySelector("namelist[cid='birdnames']").textContent.split(",");
+                const text = e.target.responseText;
+                const json = JSON.parse(text);
+
+                const dogNames = json["dognames"];
+                const catNames = json["catnames"];
+                const birdNames = json["birdnames"];
 
                 const dogHtml = `<ol>${dogNames.map(name => `<li>${name}</li>`).join("")}</ol>`;
                 const catHtml = `<ol>${catNames.map(name => `<li>${name}</li>`).join("")}</ol>`;
