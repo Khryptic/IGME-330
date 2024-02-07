@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<greeter-data>
+    <title>Greeter</title>
+    <greetings>Hi,Hello,Hey there</greetings>
+</greeter-data>

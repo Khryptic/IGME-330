@@ -32,7 +32,15 @@
 
     const double = number => {return number * 2};
 
-    window.onload = init;
+    function takeHomeQuiz(){
+        const colors = "red,green,blue";
+        const colorsArr = colors.split(',');
+        let listText =`<ol>${colorsArr.map(color => `<li>${color}</li>`).join("")}</ol>`;
+        document.querySelector(".not-important").innerHTML = listText;
+    }
+
+    window.onload = takeHomeQuiz;
+
 </script>
 
 <body>
