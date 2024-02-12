@@ -31,13 +31,17 @@
 			ctx.fillStyle = "red"; 
 			
 			// D - fill a rectangle with the current fill color
-			ctx.fillRect(20,20,600,440); 
+			ctx.fillRect(20,20,600,440);
 
-            // semi-circle
-            ctx.strokeStyle = "red";
-            ctx.lineWidth = 3;
-            ctx.fillStyle = "pink";
-            
+			// Second Rectangle with color by rgb values
+			ctx.fillStyle = "rgb(133, 233, 233)";	//RGB Values
+			//ctx.fillStyle = "#ffffff";			//Could also use hex codes
+			ctx.fillRect(120,120,400,300);
+
+			//Rectangle border
+			ctx.strokeStyle = "magenta";
+			ctx.lineWidth = 10;
+			ctx.strokeRect(120,120,400,300);
 		}
 	</script>
 </head>
