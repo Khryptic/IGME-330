@@ -51,12 +51,14 @@ const babbleLoaded = (e) => {
     buttonGet5.addEventListener("click", () => { generateTechno(5) });
 
     //If device screen width is 1408 pixels or more, show 5 technobabble on startup
-    if(window.screen.width >= 1408){
+    if(window.innerWidth >= 1408)
+    {
         generateTechno(5);
     }
 
     //If width is under 1408, only show 1 at startup
-    else{
+    else
+    {
         generateTechno(1);
     }
 }
