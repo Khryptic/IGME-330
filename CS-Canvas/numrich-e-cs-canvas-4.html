@@ -29,6 +29,7 @@
 
 		// #1 call the `init` function after the pages loads
 		let ctx;
+		let paused = true;
 		window.onload = init;
 
 		function init() {
@@ -116,6 +117,7 @@
 			ctx.fill();
 			ctx.stroke();
 
+			setupUI();
 			update(ctx);
 		}
 
@@ -145,7 +147,9 @@
 
 		function update() {
 			requestAnimationFrame(update);
-			drawRandomRect(ctx);
+			if (!paused) {
+				drawRandomRect(ctx);
+			}
 		}
 
 		function canvasClicked(e) {
@@ -154,7 +158,15 @@
 			let mouseY = e.clientY - rect.y;
 			console.log(mouseX, mouseY);
 		}
-		
+
+		function setupUI() {
+			const pauseBtn = document.querySelector("#btnPause");
+			const playBtn = document.querySelector("#btnPlay");
+
+			playBtn.addEventListener("click", () => { paused = false; })
+			pauseBtn.addEventListener("click", () => { paused = true; })
+		}
+
 	</script>
 </head>
 
