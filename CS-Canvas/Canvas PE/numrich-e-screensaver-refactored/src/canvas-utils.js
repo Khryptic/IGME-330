@@ -42,5 +42,18 @@ const drawLine = (ctx, x1, y1, x2, y2, lineWidth = 1, strokeStyle = "black") => 
     ctx.restore();
 }
 
+const drawRandomRectangle = ({ ctx, x, y, width, height, fillStyle = "blue", lineWidth = 0, strokeStyle = "blue" }) => {
+    drawRectangle(ctx, x, y, width, height, fillStyle, lineWidth, strokeStyle);
+}
+
+const drawRandomArc = ({ ctx, x, y, radius, angleStart, angleEnd, fillStyle = "red", lineWidth = 1, strokeStyle = "red", counterclockwise = "false" }) => {
+    drawArc(ctx, x, y, radius, angleStart, angleEnd, fillStyle, lineWidth, strokeStyle, counterclockwise);
+}
+
+const drawRandomLine = ({ ctx, x1, y1, x2, y2, lineWidth = 1, strokeStyle = "green" }) => {
+    drawLine(ctx, x1, y1, x2, y2, lineWidth, strokeStyle);
+}
+
 export default drawRectangle;
-export {drawArc, drawLine};
+export { drawArc, drawLine };
+export { drawRandomRectangle, drawRandomArc, drawRandomLine };

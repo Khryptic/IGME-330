@@ -1,9 +1,9 @@
 import { getRandomColor, getRandomRedColor, getRandomBlueColor, getRandomGreenColor } from "./utils.js";
 import getRandomInt from "./utils.js";
 import drawRectangle from "./canvas-utils.js";
-import {drawArc, drawLine} from "./canvas-utils.js";
+import { drawArc, drawLine } from "./canvas-utils.js";
+import { drawRandomRectangle, drawRandomArc, drawRandomLine } from "./canvas-utils.js";
 
-// #1 call the `init` function after the pages loads
 let ctx;
 let canvas;
 let paused = true
@@ -13,26 +13,19 @@ let createLines = true;
 
 const init = () => {
     console.log("page loaded!");
-    // #2 Now that the page has loaded, start drawing!
 
-    // A - `canvas` variable points at <canvas> tag
     canvas = document.querySelector("canvas");
 
-    // B - the `ctx` variable points at a "2D drawing context"
     ctx = canvas.getContext("2d");
 
-    // C - all fill operations are now in red (in helper function)
-
-    // D - fill a rectangle with the current fill color
     drawRectangle(ctx, 20, 20, 600, 440, "red", 0, "white");
 
-    // Second Rectangle with color by rgb values
+    // Second Rectangle
     drawRectangle(ctx, 120, 120, 400, 300, "#ffffff");
 
     // Rectangle border
     drawRectangle(ctx, 120, 120, 400, 300, "rgb(133, 133, 233)", 10, "magenta");
 
-    // Lines
     drawLine(ctx, 20, 20, 620, 460, 5, "magenta");
     drawLine(ctx, 20, 240, 620, 240, 20, "magenta");
     drawLine(ctx, 620, 20, 20, 460, 5, "magenta");
@@ -70,19 +63,47 @@ const update = () => {
     switch (randomNum) {
         case 1:
             if (createRectangles) {
-                drawRectangle(ctx, getRandomInt(0, 640), getRandomInt(0, 480), getRandomInt(10, 90), getRandomInt(10, 90), getRandomBlueColor(), getRandomInt(2, 12), getRandomBlueColor());
+                drawRandomRectangle({
+                    ctx,
+                    x: getRandomInt(0, 640),
+                    y: getRandomInt(0, 480),
+                    width: getRandomInt(10, 90),
+                    height: getRandomInt(10, 90),
+                    fillStyle: getRandomBlueColor(),
+                    lineWidth: getRandomInt(0, 5),
+                    strokeStyle: getRandomBlueColor()
+                });
             }
             break;
 
         case 2:
             if (createArcs) {
-                drawArc(ctx, getRandomInt(0, 640), getRandomInt(0, 480), getRandomInt(0, 120), getRandomInt(0, 360), Math.PI * 2, getRandomRedColor(), getRandomInt(2, 12), getRandomRedColor(), getRandomInt(0, 1));
+                drawRandomArc({
+                    ctx, 
+                    x: getRandomInt(0, 640), 
+                    y: getRandomInt(0, 480), 
+                    radius: getRandomInt(0, 120), 
+                    angleStart: getRandomInt(0, 360), 
+                    angleEnd: getRandomInt(0, 360), 
+                    fillStyle: getRandomRedColor(), 
+                    lineWidth: getRandomInt(2, 12), 
+                    strokeStyle: getRandomRedColor(),
+                    counterclockwise: getRandomInt(0, 1)
+                });
             }
             break;
 
         case 3:
             if (createLines) {
-                drawLine(ctx, getRandomInt(0, 640), getRandomInt(0, 480), getRandomInt(0, 640), getRandomInt(0, 480), getRandomInt(1, 7), getRandomGreenColor())
+                drawRandomLine({
+                    ctx, 
+                    x1: getRandomInt(0, 640), 
+                    y1: getRandomInt(0, 480), 
+                    x2: getRandomInt(0, 640), 
+                    y2: getRandomInt(0, 480), 
+                    lineWidth: getRandomInt(1, 7), 
+                    strokeStyle: getRandomGreenColor()
+                });
             }
             break;
     }
