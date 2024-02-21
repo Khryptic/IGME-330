@@ -11,17 +11,19 @@
     </style>
     <script>
         "use strict";
-        const canvasWidth = 400, canvasHeight = 300;
+        const canvasWidth = 600, canvasHeight = 500;
         let ctx;
         let n = 0;
-        const divergence = 137.5;
-        const c = 4;
-        const fps = 144;
+        let divergence = 137.5;
+        let c = 4;
+        const fps = 60;
+        let timer;
 
         window.onload = init;
 
         function init() {
             ctx = canvas.getContext("2d");
+            document.querySelector("#btn-reset").addEventListener("click", () => clearScreen(ctx));
             canvas.width = canvasWidth;
             canvas.height = canvasHeight;
             ctx.fillRect(0, 0, canvasWidth, canvasHeight);
@@ -29,7 +31,7 @@
         }
 
         function loop() {
-            setTimeout(loop, 1000 / fps);
+            timer = setTimeout(loop, 1000 / fps);
 
             // each frame draw a new dot
             // `a` is the angle
@@ -44,6 +46,7 @@
 
             // let color = `rgb(${n % 256}, 0, 255)`;
 
+            // Change: picks shades of red for the colors
             let aDegrees = (n * divergence) % 256;
             let color = `rgb(${aDegrees + 200},${aDegrees - 80},${aDegrees + 50})`;
 
@@ -55,14 +58,19 @@
             drawCircle(ctx, x, y, 2, color);
 
             n++;
+
+            // Change: Increases the spacing each frame
+            // Change: Divergence is based on a slider each frame
+            c = document.querySelector("#sldr-spacing").value;
+            divergence = document.querySelector("#sldr-divergence").value;
         }
 
         // helpers
-        function dtr(degrees) {
+        const dtr = (degrees) => {
             return degrees * (Math.PI / 180);
         }
 
-        function drawCircle(ctx, x, y, radius, color) {
+        const drawCircle = (ctx, x, y, radius, color) => {
             ctx.save();
             ctx.fillStyle = color;
             ctx.beginPath();
@@ -72,12 +80,48 @@
             ctx.restore();
         }
 
+        // Clears and resets the canvas
+        const clearScreen = (ctx) => {
+            ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+            n = 0;
+            divergence = 137.5;
+            c = 4;
+            clearTimeout(timer);
+            init();
+        }
+
     </script>
 </head>
 
 <body>
     <canvas id="canvas"></canvas>
+    <section id="sliders">
+        <input type="range" min = "1" max="10" step="0.05" value="4" name="sldr-spacing" id="sldr-spacing">
+        <label for="sldr-spacing">Spacing</label>
+        <br>
+        <input type="range" min = "130" max="150" step="0.01" value="137.5" name="sldr-divergence" id="sldr-divergence">
+        <label for="sldr-divergence">Divergence</label>
+    </section>
+    <section id="reset">
+        <br>
+        <button id="btn-reset">Reset</button>
+    </section>
+    <section id="about">
+        <h2>About this app</h1>
+        <ul>
+            <li>The first slider changes the spacing between each dot</li>
+            <li>The second slider changes the divergence angle of each dot</li>
+            <li>The reset button will clear and restart the canvas, but not the slider values</li>
+            <li>Changes made from the starter code:</li>
+            <ul>
+                <li>The framerate is now 60 FPS</li>
+                <li>The colors of each dot are based on the angle and will be a shade of red.</li>
+                <li>The spacing and divergence values are dependant on the sliders.</li>
+                <li>The canvas size has increased to 600 x 500.</li>
+            </ul>
+        </ul>
 
+    </section>
 </body>
 
 </html>
