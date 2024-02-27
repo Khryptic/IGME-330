@@ -62,14 +62,18 @@
             ctx = canvas.getContext("2d");
             canvas.width = canvasWidth;
             canvas.height = canvasHeight;
-            sprites.push(new CircleSprite({ x: 100, 
-                                            y: 100, 
-                                            radius: 20, 
-                                            color: "green" }));
-            sprites.push(new CircleSprite({ x: 100, 
-                                            y: 200, 
-                                            radius: 10, 
-                                            color: "red" }));
+            sprites.push(new CircleSprite({
+                x: 100,
+                y: 100,
+                radius: 20,
+                color: "green"
+            }));
+            sprites.push(new CircleSprite({
+                x: 100,
+                y: 200,
+                radius: 10,
+                color: "red"
+            }));
             loop();
         };
 
