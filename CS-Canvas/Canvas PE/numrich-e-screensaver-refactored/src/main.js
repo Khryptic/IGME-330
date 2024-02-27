@@ -79,14 +79,14 @@ const update = () => {
         case 2:
             if (createArcs) {
                 drawRandomArc({
-                    ctx, 
-                    x: getRandomInt(0, 640), 
-                    y: getRandomInt(0, 480), 
-                    radius: getRandomInt(0, 120), 
-                    angleStart: getRandomInt(0, 360), 
-                    angleEnd: getRandomInt(0, 360), 
-                    fillStyle: getRandomRedColor(), 
-                    lineWidth: getRandomInt(2, 12), 
+                    ctx,
+                    x: getRandomInt(0, 640),
+                    y: getRandomInt(0, 480),
+                    radius: getRandomInt(0, 120),
+                    angleStart: getRandomInt(0, 360),
+                    angleEnd: getRandomInt(0, 360),
+                    fillStyle: getRandomRedColor(),
+                    lineWidth: getRandomInt(2, 12),
                     strokeStyle: getRandomRedColor(),
                     counterclockwise: getRandomInt(0, 1)
                 });
@@ -96,12 +96,12 @@ const update = () => {
         case 3:
             if (createLines) {
                 drawRandomLine({
-                    ctx, 
-                    x1: getRandomInt(0, 640), 
-                    y1: getRandomInt(0, 480), 
-                    x2: getRandomInt(0, 640), 
-                    y2: getRandomInt(0, 480), 
-                    lineWidth: getRandomInt(1, 7), 
+                    ctx,
+                    x1: getRandomInt(0, 640),
+                    y1: getRandomInt(0, 480),
+                    x2: getRandomInt(0, 640),
+                    y2: getRandomInt(0, 480),
+                    lineWidth: getRandomInt(1, 7),
                     strokeStyle: getRandomGreenColor()
                 });
             }
