@@ -1,0 +1,6 @@
+{
+    "title": "Persona 3 Audio Visualizer",
+    "directory": ["media/Full Moon Full Life.mp3", "media/Battle Hymn Of the Soul.mp3", "media/Want To Be Close.mp3"],
+    "tracklist": ["Full Moon Full Life", "Battle Hymn of the Soul", "Want To Be Close"],
+    "directions": ["Choose a song and press play. Modify the audio-visualizer with the controls above.", "Try different controls to see what they do."]
+}
