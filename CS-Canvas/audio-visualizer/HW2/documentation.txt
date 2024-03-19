@@ -1,0 +1,29 @@
+Edward Numrich -- HW2 "Ultimate Audio Visualizer"
+
+1. Audio Additions
+
+I added two new nodes to the website: highshelf and lowshelf filters. The filters will increase the gain of frequencies above 25db and below 15db, respectively, which will make the highs and lows louder. Both are controlled by their own separate checkboxes. I used the linked tutorial to complete them.
+
+-----------------------------
+2. Sprites
+
+I added two Sprite classes that both create different shapes, BoxSprite and CircleSprite. Both classes can be found under one sprites.js file. 
+BoxSprites created the many different boxes that move up and down according to the audio data. The front black row of boxes support less data and the back gray row of boxes support more of the audio data. The goal is to have the boxes represent buildings in the moonlight with the gray ones being ones in the distance. So to achieve that effect, more boxes (and more data) are used in the back to give the illusion.
+CircleSprites creates the moon. The moon will glow at different intensities based on the audio data being received.
+-----------------------------
+3. JSON File
+
+In the av-json file, I included the required title and song locations within the directory. I also added a tracklist key to hold the names of each of the songs which will be used to fill out the options for the track dropdown list control. Lastly, a key for the website directions gets loaded from the file and is added to the end of the site to give the user an idea on how to use the website.
+-----------------------------
+
+4. Aesthetics
+
+For this assignment I wanted to go with an audio visualizer themed around my current gaming obsession, Persona 3 Reload, so the UI and Visual elements both reference themes and mechanics from that game and the music I used (this site won't uploaded on banjo to avoid legal trouble) also comes from the game itself. This design idea honestly kept be invested in the project more than I would've otherwise.
+
+The night and moon play a huge role mechanically and plot-wise, so I knew I wanted the moon to be one of the two sprites being drawn. To also make the scene feel more alive, I had the moon move on an arc in the sky to simulte the passage of time, even if day doesn't come. When the moon reaches the far left side of the canvas and goes offscreen, it'll be translated to the right side offscreen to restart the cycle. I added a control toggle to turn off this effect so the moon can stay in it's original position and a slider that can adjust the speed at which the moon moves through the scene.
+
+The main audio visual part are the buildings. The black and gray bars are supposed to represent buildings shrouded in the dark among the light of the moon. The gray buildings in the back have more data spread throughout, and the more buildings in the back gives the illusion that they're at a far distance from the foreground black boxes. There is a checkbox to toggle the rendering of the buildings in the shot. To better emphasize them, I changed the background from the garish gradient to a nice blue.
+
+Lastly, there is an "enable Dark Hour" checkbox. In Persona 3, the dark hour is a 25th hour of the day unseen by most people. Aesthetically, the dark blues of night become much more green, which is what this control aims to do. Toggling it will change the background of the canvas to a bright green with a very clear fadeout to reference the Dark Hour of the game. To add some consistency, I also changed the text color from the blue of the default scene to a similar green.
+
+All in all, I'm pretty proud of how it turned out. I don't think this is portfolio-worthy based on the many other examples I've seen. But I think I created a very aesthetically pleasing audio-visualizer that has added a lot of improvements from the original starter. I've gotten a lot of positive feedback from friends who also play the Persona series when I showed them as I went along working on this. So, I think I'll give myself a 10% of 15%.
