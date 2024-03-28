@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Audio Visualizer</title>
+  <link href="./styles/default-styles.css" type="text/css" rel="stylesheet" />
+  <!-- <script src="./src/loader.js" type="module"></script> -->
+</head>
+
+<body>
+  <main>
+    <h1 id="title">Audio Visualizer</h1>
+    <canvas width="800" height="400"></canvas>
+    <div id="controls">
+      <h2>Media:</h2>
+      <section>
+        <button id="btn-play" data-playing="no"></button>
+        <button id="btn-fs">Full Screen</button>
+
+        <label>Track:
+          <select id="select-track">
+            <option selected>None</option>
+          </select>
+        </label>
+      </section>
+
+      <section>
+        Data Type:
+        <select id="data-type">
+          <option value="frequency" selected>Frequency</option>
+          <option value="waveform">Waveform</option>
+        </select>
+      </section>
+
+      <section>
+        Volume: <input type="range" id="slider-volume" min="0" max="2" value="1" step="0.01">
+        <span id="label-volume">???</span>
+      </section>
+
+      <section>
+        <span><input type="checkbox" id="cb-treble"><label for="cb-treble">Highshelf Filter (Treble)</label></span>
+        <span><input type="checkbox" id="cb-bass"><label for="cb-moon">Lowshelf Filter (Bass)</label></span>
+      </section>
+
+      <h2>Visuals:</h2>
+      <section>
+        <span><input type="checkbox" id="cb-buildings" checked><label for="cb-buildings">Show Buildings</label></span>
+        <span><input type="checkbox" id="cb-moon" checked><label for="cb-moon">Show Moon</label></span>
+        <span><input type="checkbox" id="cb-darkhour"><label for="cb-darkhour">Enable Dark Hour</label></span>
+        <span><input type="checkbox" id="cb-translate"><label for="cb-translate">Move Moon</label></span>
+      </section>
+
+      <section>
+        Moon Movement Speed: <input type="range" id="slider-speed" min="0.001" max="0.01" value="0.005" step="0.0001">
+        <span id="label-speed">???</span>
+      </section>
+      <section id="directions">
+        <h2>Directions:</h2>
+      </section>
+    </div>
+  </main>
+  <script src="dist/bundle.js"></script>
+</body>
+</html>
