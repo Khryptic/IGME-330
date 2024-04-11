@@ -1,5 +1,7 @@
 const storeName = "abc1234-amiibo-app";
 
+/** @returns {Object} the JSON object stored in local storage */
+
 const loadJSONFromLocalStorage = () => {
     const string = localStorage.getItem(storeName);
     let json;
