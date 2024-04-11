@@ -1,0 +1,183 @@
+* {
+    scroll-behavior: smooth;
+    font-family: 'Press Start 2P', cursive;
+}
+
+body {
+    background-color: rgb(202, 202, 202);
+    height: 100%;
+}
+
+header {
+    display: grid;
+    place-items: center;
+}
+
+header img{
+    width: 80vw;
+    margin-bottom: -20px;
+}
+
+#inputs {
+    font-size: small;
+}
+
+#hint {
+    padding-bottom: 15px;
+    text-align: center;
+    height: 1em;;
+    padding-bottom: 30px;
+}
+
+.pokedex {
+    width: 40vw;
+    display: flex;
+    flex-direction:column;
+    border: 6px solid black;
+    align-self: center;
+    align-items: center;
+    background-color: rgb(125, 125, 125);
+    padding-top: 15px;
+    padding-bottom: 25px;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin: auto;
+}
+
+.hint-button {
+    float: right;
+    display: none;
+    width: 40%;
+    height: auto;
+}
+
+.play-button{
+    float: left;
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+#answerbox{
+    width: auto;
+}
+
+#game {
+    background-color: rgb(156, 234, 255);
+    padding: 15px;
+    align-self: center;
+    width: 90%;
+}
+
+#game img {
+    display: flex;
+    width: 25vw;
+    margin-right: auto;
+    margin-left: auto;
+    image-rendering:pixelated;
+    padding-top: 10px;
+}
+
+#controls {
+    padding-left: 5px;
+    margin-bottom: 7px;
+    text-align: center;
+}
+
+#inputs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#inputs div{
+    font-size: 16px;
+    padding-left: 15px;
+}
+
+#answer{
+    text-align: center;
+    font-size: large;
+}
+
+#answerbox{
+    height: 2em;
+}
+
+#status{
+    text-align: center;
+    padding-bottom: 6px;
+}
+
+#pokeball{
+    display: none;
+}
+
+button{
+    background-color: rgb(120, 195, 215);
+    font-size: 1rem;
+}
+
+button:hover{
+    background-color: rgb(156, 234, 255);
+}
+
+button:active{
+    background-color: rgb(156, 234, 255);
+    transform: scale(.85);
+}
+
+button:focus {
+    background-color: rgb(120, 195, 215);
+}
+
+@media screen and (max-width:819px) {
+    header {
+        padding-bottom: 15px;
+    }
+
+    .pokedex{
+        width:fit-content;
+        padding-left: 5px;
+        padding-right: 15px;
+        padding-top: 5px;
+        height: auto;
+    }    
+
+    .pokedex{
+        padding-bottom: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    #game img{
+        width: 100%;
+
+    }
+
+    #pokeball{
+        display: block;
+        width: 100%;
+    }
+
+    #pokeball img{
+        width:100%;
+    }
+
+    #hint{
+        padding-bottom: 25px;
+        font-size: 15PX;
+    }
+
+    #answer{
+        padding-top: 10px;
+    }
+
+    #enter{
+        margin-top: 5px;
+    }
+}
