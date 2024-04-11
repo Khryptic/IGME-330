@@ -1,39 +1,36 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import './App.css'
+import { loadXHR } from "./ajax";
+import { readFromLocalStorage, writeToLocalStorage } from "./storage";
+import Footer from './Footer';
 
 // app "globals" and utils
 const baseurl = "https://www.amiiboapi.com/api/amiibo/?name=";
 
-const loadXHR = (url, callback) => {
-  // set up the connection
-  // when the data loads, invoke the callback function and pass it the `xhr` object
-  const xhr = new XMLHttpRequest();
-  xhr.onload = () => callback(xhr);
-  xhr.open("GET", url);
-  xhr.send();
-};
-
-const searchAmiibo = (name, callback) => {
-  loadXHR( `${baseurl}${name}`, callback);
-};
-
 const App = () => {
-  const [term, setTerm] = useState("Mio");
+  const savedTerm = useMemo(() => readFromLocalStorage("term") || "", []); const [term, setTerm] = useState(savedTerm);
   const [results, setResults] = useState([]);
+  useEffect(() => {
+    writeToLocalStorage("term", term);
+  }, [term]);
+
+  const searchAmiibo = (name, callback) => {
+    loadXHR(`${baseurl}${name}`, callback);
+  };
 
   const parseAmiiboResult = xhr => {
     // get the `.responseText` string
-   const string = xhr.responseText;
-  
+    const string = xhr.responseText;
+
     // declare a json variable
-   let json ;
-  
+    let json;
+
     // try to parse the string into a json object
     json = JSON.parse(string);
-  
+
     // log out number of results (length of `json.amiibo`)
     console.log(`Number of results=${json.amiibo.length}`);
-    
+
     // loop through `json.amiibo` and log out the character name
     for (let obj of json.amiibo) {
       console.log(obj.character);
@@ -50,14 +47,14 @@ const App = () => {
     <main>
       <button onClick={() => searchAmiibo(term, parseAmiiboResult)}>Search</button>
       <label>
-        Name:   
-        <input value={term} onChange={e => setTerm(e.target.value)}/>
+        Name:
+        <input value={term} onChange={e => setTerm(e.target.value)} />
       </label>
       {results.map(amiibo => (
-        <span key={amiibo.head + amiibo.tail} style={{color:"green"}}>
+        <span key={amiibo.head + amiibo.tail} style={{ color: "green" }}>
           <h4>{amiibo.name}</h4>
-          <img 
-            width="100" 
+          <img
+            width="100"
             alt={amiibo.character}
             src={amiibo.image}
           />
@@ -65,9 +62,10 @@ const App = () => {
       ))}
     </main>
     <hr />
-    <footer>
-      <p>&copy; 2023 Ace Coder</p>
-    </footer>
+    <Footer
+      name="Edward Numrich"
+      year={new Date().getFullYear()}
+    />
   </>;
 };
 
