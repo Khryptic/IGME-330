@@ -1,0 +1,9 @@
+* {
+    scroll-behavior: smooth;
+    font-family: 'Press Start 2P', cursive;
+}
+
+body {
+    background-color: rgb(202, 202, 202);
+    height: 100%;
+}

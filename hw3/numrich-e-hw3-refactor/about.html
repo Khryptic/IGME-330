@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="styles/about.css">
+
+    <title>About Who's That Pokémon</title>
+
+    <script src="src/hamburger.ts" type="module"></script>
+</head>
+
+<body class="has-background-grey-light">
+    <div class="navbar">
+        <nav>
+            <a class="navbar-burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <div class="navbar-menu" id="nav-links">
+                <a class="navbar-item is-active" id="about-tab" href="about.html">About</a>
+                <a class="navbar-item" id="app-tab" href="index.html">Game</a>
+            </div>
+        </nav>
+    </div>
+    <header class="header is-flex is-align-content-center is-justify-content-center">
+        <img src="assets/pokemon-title.png" alt="Who's That Pokémon?">
+    </header>
+    <div id="text" class="mx-5">
+        This is a game I made back in IGME-235 that uses PokeAPI as a base to play a game inspired by the Pokémon anime's game under the same name.
+        This particular rendition is what I did back then but reworked with a new UI and code that uses Bulma and TypeScript. The code is also reword to utilize
+        modules and includes a navigation bar for easy traversal between this page and the game. The code is also all bundled in ES5.
+    </div>
+    <div id="padding" class="hero is-halfheight"></div>
+    <div id="contact" class="footer"> Edward Numrich @ emn5100@rit.edu</div>
+</body>
+
+</html>

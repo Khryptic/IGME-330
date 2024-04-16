@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,52 +8,86 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="icon" type="assets/x-icon" href="favicon/">
-    <title>Who's That Pokémon?</title>
-    
+    <title>Who's That Pokémon Webgame?</title>
+
     <script src="src/loader.js" type="module"></script>
-    <script src="src/main.js" type="module"></script>
+    <script src="src/hamburger.js" type="module"></script>
 </head>
-<body>
-    <header>
+
+<body class="has-background-grey-light">
+    <div class="navbar">
+        <nav>
+            <a class="navbar-burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <div class="navbar-menu" id="nav-links">
+                <a class="navbar-item" id="about-tab" href="about.html">About</a>
+                <a class="navbar-item is-active" id="app-tab" href="index.html">Game</a>
+            </div>
+        </nav>
+    </div>
+    <header class="header is-flex is-align-content-center is-justify-content-center">
         <img src="assets/pokemon-title.png" alt="Who's That Pokémon?">
     </header>
-    <div id="wrapper">
-        <div class="pokedex">
-            <div id="controls">
+    <div id="wrapper" class="px-6 pb-4">
+        <div class="pokedex has-text-dark">
+            <div id="controls" class="is-size-6-desktop column has-text-centered has-text-weight-bold">
                 Choose a region or regions:
-                <div id="inputs">
-                    <div><input type="checkbox" value="1" name="Kanto" checked>Kanto</div>
-                    <div><input type="checkbox" value="2" name="Johto" checked>Johto</div>
-                    <div><input type="checkbox" value="3" name="Hoenn" checked>Hoenn</div>
-                    <div><input type="checkbox" value="4" name="Sinnoh" checked>Sinnoh</div>
-                    <div><input type="checkbox" value="5" name="Unova" checked>Unova</div>
-                    <div><input type="checkbox" value="6" name="Kalos" checked>Kalos</div>
-                    <div><input type="checkbox" value="7" name="Alola" checked>Alola</div>
-                    <div><input type="checkbox" value="8" name="Galar" checked>Galar</div>
+                <div id="inputs"
+                    class="columns is-centered is-size-3-desktop is-flex is-flex-wrap is-justify-content-auto">
+                    <div class="column is-1 is-size-6-desktop"><input type="checkbox" value="1" name="Kanto"
+                            checked>Kanto</div>
+                    <div class="column is-1 is-size-6-desktop"><input type="checkbox" value="2" name="Johto"
+                            checked>Johto</div>
+                    <div class="column is-1 is-size-6-desktop"><input type="checkbox" value="3" name="Hoenn"
+                            checked>Hoenn</div>
+                    <div class="column is-1 is-size-6-desktop"><input type="checkbox" value="4" name="Sinnoh"
+                            checked>Sinnoh</div>
+                    <div class="column is-1 is-size-6-desktop"><input type="checkbox" value="5" name="Unova"
+                            checked>Unova</div>
+                    <div class="column is-1 is-size-6-desktop"><input type="checkbox" value="6" name="Kalos"
+                            checked>Kalos</div>
+                    <div class="column is-1 is-size-6-desktop"><input type="checkbox" value="7" name="Alola"
+                            checked>Alola</div>
+                    <div class="column is-1 is-size-6-desktop"><input type="checkbox" value="8" name="Galar"
+                            checked>Galar</div>
                 </div>
             </div>
-            <div id="status"></div>
-            <div id="game">
-                <div id="play-buttons">
-                    <button class="play-button">Get a Pokémon</button>
-                    <button class="hint-button">Get a Hint</button>
+            <div id="status" class="has-text-centered is-centered pb-5"></div>
+            <div id="game" class="has-text-centered has-background-primary box">
+                <div id="play-buttons" class="columns is-centered pb-4">
+                    <button class="play-button column is-size-5-touch is-centered">Get a Pokémon</button>
+                    <button class="hint-button column is-size-5-touch is-centered">Get a Hint</button>
                 </div>
-                <div id="gamewindow">
-    
+                <div id="gamewindow"
+                    class="image container has-text-centered is-flex is-align-content-center is-justify-content-center">
                 </div>
-                <div id="hint">
-        
-                </div>
-                <div id="answer">
-                
-                </div>
+                <div id="hint" class="py-3 has-text-centered"></div>
+                <div id="answer" class="has-text-centered pb-4"></div>
             </div>
-            <div id="pokeball">
-                <img src="assets/pokebottom.png" alt="">
-            </div>
+            <div id="padding" class="hero is-halfheight"></div>
         </div>
     </div>
 </body>
+
+</html>s="hero is-halfheight"></div>
+        </div>
+    </div>
+</body>
+
+</html>s="hero is-halfheight"></div>
+        </div>
+    </div>
+</body>
+
+</html>s="hero is-halfheight"></div>
+        </div>
+    </div>
+</body>
+
 </html>
