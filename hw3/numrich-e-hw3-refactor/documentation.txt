@@ -1,0 +1,6 @@
+In this I refactored my Project 2 from 235.
+
+I programmed in TypeScript as best as I could. In the code, I moved the one JavaScript file and split it into multiple filies utilizing Modules for a better experience.
+I had a lot of problems with HTML input elements, like checkboxes and an input box, so I created temporary variables and parsing them as HTMLElements of the respective types or
+using explicit casting into that element. A lot of my replaceAll functions were broken in the transition, but no Pokemon names have more than 1 special character, so I decided to just use replace over replaceAll.
+All of my style JS code in the transition to TypeScript doesn't work even with casting, so I started using SetAttribute instead.

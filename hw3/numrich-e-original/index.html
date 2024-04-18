@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/mainstyle.css">
+    <link rel="icon" type="image/x-icon" href="favicon/">
+    <title>Who's That Pokémon?</title>
+    
+    <script src="js/pokefinderscript.js"></script>
+</head>
+<body>
+    <header>
+        <img src="images/pokemon-title.png" alt="Who's That Pokémon?">
+    </header>
+    <div id="wrapper">
+        <div class="pokedex">
+            <div id="controls">
+                Choose a region or regions:
+                <div id="inputs">
+                    <div><input type="checkbox" value="1" name="Kanto" checked>Kanto</div>
+                    <div><input type="checkbox" value="2" name="Johto" checked>Johto</div>
+                    <div><input type="checkbox" value="3" name="Hoenn" checked>Hoenn</div>
+                    <div><input type="checkbox" value="4" name="Sinnoh" checked>Sinnoh</div>
+                    <div><input type="checkbox" value="5" name="Unova" checked>Unova</div>
+                    <div><input type="checkbox" value="6" name="Kalos" checked>Kalos</div>
+                    <div><input type="checkbox" value="7" name="Alola" checked>Alola</div>
+                    <div><input type="checkbox" value="8" name="Galar" checked>Galar</div>
+                </div>
+            </div>
+            <div id="status"></div>
+            <div id="game">
+                <div id="play-buttons">
+                    <button class="play-button">Get a Pokémon</button>
+                    <button class="hint-button">Get a Hint</button>
+                </div>
+                <div id="gamewindow">
+    
+                </div>
+                <div id="hint">
+        
+                </div>
+                <div id="answer">
+                
+                </div>
+            </div>
+            <div id="pokeball">
+                <img src="images/pokebottom.png" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

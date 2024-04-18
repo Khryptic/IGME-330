@@ -1,0 +1,41 @@
+<a href="https://www.freecodecamp.org/news/html-center-image-css-align-img-center-example/ ">Image Centering Help</a><br>
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/setTimeout">Game Timing Help: setTimeout()</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll">replaceAll(), my biggest lifesaver</a> <br>
+<a href="https://commons.wikimedia.org/wiki/File:Poké_Ball.svg">favicon source</a><br>
+Title text was an image made by me.<br><br>
+Original Sketch:<br>
+<img src="images/proposal2.png" alt="">
+<br><br>
+This project has been something else, I will admit. To be honest, I'm suprised that anything even works at all, especailly since I wanted to use as little tutorials as possible as a challenge to see how much I knew, myself. The Javascript was easily the hardest part of the project. There was no easy and direct way to get everything I wanted from it, which meant that I had to send mutliple requests to the API to get that. For example, when I search for a Pokemon directly, it doesn't list the Pokedex number, which would've been super useful. <br><br>
+For this project, my main goal was to show off Pokemon, new and old, in an engaging way that wasn't just a show of all Pokemon, which made me think of the first season of the Pokemon anime, where at the midpoint of an episode, there would be a Pokemon guessing game, which I took more than just a little inspriation from. <br><br>
+The aesthetic design concept was based on the Pokedex from Generation 5, or Pokemon Black and White Versions in-particular. What the site replicates is the screen of the Pokedex, hence the blue background. The Pokedex has a second screen that slides out from behind it, and that is incorporated by a small thing that I found cool, which was that the play window gets bigger when there is a Pokemon on display. And while on a mobile device, (816px wide or smaller) I added the bottom red part of the Pokedex, which would be the controls. That is honestly my favorite part. It was an image I made using GIMP.<br><br>
+<img src="images/Pokédex_BW_art.png" alt="Gen 5 Pokedex"><br><a href="https://bulbapedia.bulbagarden.net/wiki/File:Pokédex_BW_art.png">Source</a>
+<br><br>
+I have to say, though, that I am really proud of how the game itself came out. It plays exactly how I imagined it working and I don't think I could make it better if I tried. The way I load a generation gives me the name and a link back to the API for the individual Pokemon species information, which is different from regular Pokemon info. The sprite wasn't included. Instead, I took the Pokedex number at the end of the URL to use to get the standard info, which included the sprite. I didn't do that originally, which caused some Pokemon to throw errors and not have a sprite. I did remove the score from the original design since I felt that this was more an immersive educational tool of Pokemon, and having a score didn't feel right for it.
+<br>Fun fact: the Pokemon Pumpkaboo and Gourgeist have three different sizes, so there was no standard front sprite they way I originally did it by using the Pokemon name and not the Pokedex number, which threw an error as I just mentioned.
+<br><br>
+The hardest part of doing the Javascript was likely the guess verification process. There are a surprising amount of Pokemon with special characters in their name, and any space is replaced with a dash. Some have multiple forms that end in "-m" or "-f". So, for the sake of making the code efficient, I split the names by the dash and only used index 0 of the array, which would be the name of the Pokemon. Some pokemon have a special character that isn't reflected in the api, like Type: Null, which has a colon. In the end, I had to make independent clauses to account for these extra Pokemon, which was time consuming. <br>
+I am so thankful to my friends from back home who helped me bug fix the game into the early morning over Discord.
+<br><br><br>
+Requirements:
+<ul>
+    <li>3+ Controls: Answer Box, Region Checkboxes, a Hint Button, and a submit answer button.</li>
+    <li>Saves the last configuration of the checkboxes between page reloads. Defaults to all being on for easy play, at the request of a classmate.</li>
+    <li>As far as I've seen, there have been no thrown errors.</li>
+    <li>Design is simple and the colors blend well. This allows for the user to focus on the game itself and not be distracted by anything else on the site.</li>
+    <li>The error of no input by the player gets resolved by informing them that they entered nothing while not punishing them for it.</li>
+    <li>I believe that the simple design of the site also allows how to use it to be pretty straightforward. There is only a single button before the game starts, to make it obvious what to press, then the rest of the controls show.</li>
+    <li>There is a line of text so that the player knows that the website is loading the next Pokemon in the event it is taking longer than hoped.</li>
+    <li>Flexbox is utilized</li>
+    <li>let and const is used for variables</li>
+    <li>HTML and CSS is valid</li>
+    <li>CSS and JS are on external files liked to index.html</li>
+    <li>Code is commented</li>
+    <li>Variables and functions follow proper naming conventions</li>
+    <li>All instances of console.log() have been removed</li>
+    <li>Only uses the newer querySelector() and querySelectorAll()</li>
+</ul>
+
+<br>
+Grading: <br>
+I would give myself, personally, I would give myself an 90. That might be a bit harsh, and I am immensely proud of myself, but I feel that the JavaScript was my strongest suit. I'm not really a designer, so I think my CSS is what's lacking the most. I feel there's a lot more I could've done with it but never did. And, as much as I call it the best part, there is likely a part of the Javascript I overlooked that can even further been condensed or made more efficient.
