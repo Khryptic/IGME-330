@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>HW-4 - NY State Park Buddy!</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=yes">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css" rel="stylesheet">
+    <script src="./src/parks-viewer.js" type="module"></script>
+</head>
+
+<body>
+    <header class="box is-small has-background-info is-bold p-2 mb-4 has-text-light mt-2 ml-2 mr-2 pl-6">
+        <div class="is-size-1">Favorite Parks Viewer</div>
+        <div class="is-size-5">See which parks are the most popular!</div>
+    </header>
+    <span class="box has-background-info is-small has-text-light ml-2 mr-2 pl-6">
+        <div class="pb-2 has-text-dark is-underlined is-bold is-size-5">Admin Testing: Increment/Decrement Park Count</div>
+        <p class="">Park ID: <input type="text" value="" id="id-field" class="ml-2"></p>
+        <button id="btn-admin" class="button is-warning mt-2 mb-2 is-flex">Send Park ID to Server</button>
+        <p><input type="checkbox" id="chk-decrement"> <span class="is-bold is-size-4"> Decrement?</span></p>
+    </span>
+    <span class="box has-background-info is-small has-text-light ml-2 mr-2 pl-6">
+        <div class="pb-2 has-text-dark is-underlined is-bold is-size-5">Park Popularity</div>
+        <ol id="data-list">
+            <li>No data yet!</li>
+        </ol>
+    </span>
+</body>
+
+</html>
